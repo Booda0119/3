@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AJZA ALHASB JAILBREAK 0558028009</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+ <style>
+      body {
+        background-image: url("image.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: #252526;
+        color: #3e3d3d;
+        font-family: "Segoe UI", Tahoma, sans-serif;
+        text-align: center;
+      }
+    </style>
+<body>
+<script>
+    var uaFull = navigator.userAgent;
+    var match = uaFull.match(/PlayStation 4[ /]([\d.]+)/i);
+    var isPS4 = match !== null;
+    var fwVersion = isPS4 ? match[1] : "Unknown";
+    var fwNum = parseFloat(fwVersion);
+
+    function onScriptError() {
+        var msgs = document.getElementById("msgs");
+        msgs.innerHTML = "Content not Found! - Clear Browser Data and Re-Install Cache ...";
+    }
+
+    // انتشال كود التحميل بعد جاهزية عناصر الصفحة
+    document.addEventListener("DOMContentLoaded", () => {
+        var msgs = document.getElementById("msgs");
+
+        if (!isPS4) {
+            msgs.innerHTML = "It works from system 11.50 to 13.00";
+            return;
+        }
+
+        // التعامل مع وضع الكاش والتوجيه
+        if (window.applicationCache && window.applicationCache.status == '0') {
+            if (fwNum >= 11.50 && fwNum <= 13.00) {
+                window.location.replace("cacheslopkit.html");
+            } else {
+                msgs.innerHTML = 'Unsupported Firmware: <span style="color: red;">' + fwVersion + '</span>';
+            }
+        } else {
+            // استدعاء السكربتات والربط المباشر
+            var script = document.createElement('script');
+            
+            // الربط المباشر لسكربت chain_lapse لجهاز (11.50 - 12.02)
+                if (fwNum >= 11.50 && fwNum <= 12.02) {
+                script.type = 'module';
+                script.src = "slopkit/chain_lapse.js";
+                script.onerror = onScriptError;
+                document.head.appendChild(script);
+                msgs.innerHTML = "Slopkit (Chain Lapse)...";
+            } 
+            // الربط المباشر لسكربت chain_poops لجهاز (12.50 - 13.00)
+            else if (fwNum >= 12.50 && fwNum <= 13.00) {
+                script.type = 'module';
+                script.src = "slopkit/chain_poops.js";
+                script.onerror = onScriptError;
+                document.head.appendChild(script);
+                msgs.innerHTML = "Slopkit (Chain Poops)...";
+            } else {
+                msgs.innerHTML = 'Unsupported Firmware: <span style="color: red;">' + fwVersion + '</span>';
+            }
+        }
+    });
+</script>
+
+<h1>AJZA ALHASB JAILBREAK</h1>
+<br>
+<h1 id="msgs" style="font-size: 30px;margin-top: 77px;margin-bottom: 455px;">جاري تحميل GoldHEN v2.4b18.10... يرجى الانتظار</h1>
+</body>
+</html>
+
+
+
+
+
+
+
+<div class="loader-wrapper"> <!-- حاوية شريط التحميل --> 
+    <div class="top-loading-container" id="loading-container"> 
+        <div class="top-loading-bar"></div> 
+    </div> 
+</div> 
+
+<style> 
+/* الحاوية الرئيسية لتثبيت الشريط في أعلى المنتصف */ 
+.loader-wrapper { 
+    position: fixed; 
+    top: 80px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 9999; 
+    width: 90%; 
+    max-width: 400px; 
+} 
+/* حاوية شريط التحميل */ 
+.top-loading-container { 
+    width: 200px; 
+    height: 4px; 
+    background-color: #313030; 
+    overflow: hidden; 
+    border-radius: 2px; 
+    margin: 0 auto; 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+} 
+/* شريط التحميل الداخلي وحركته لـ 12 ثانية (تم التعديل هنا) */ 
+.top-loading-bar { 
+    width: 100%; 
+    height: 100%; 
+    background-color: #1ccb88; 
+    animation: progressLoader 12s linear forwards; 
+} 
+/* حركة التعبئة من اليسار لليمين */ 
+@keyframes progressLoader { 
+    0% { transform: translateX(-100%); } 
+    100% { transform: translateX(0%); } 
+} 
+</style> 
+
+<script> 
+(function() { 
+    const containerElement = document.getElementById("loading-container"); 
+    // إخفاء شريط التحميل نهائياً بعد مرور 12 ثانية = 12000 ميلي ثانية (تم التعديل هنا) 
+    setTimeout(() => { 
+        if (containerElement) { 
+            containerElement.style.opacity = '0'; 
+            containerElement.style.transform = 'scaleY(0)'; 
+            setTimeout(() => { 
+                containerElement.style.display = 'none'; 
+            }, 300); // وقت الاختفاء الناعم 
+        } 
+    }, 12000); 
+})(); 
+</script>
