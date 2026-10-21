@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html manifest="slopkit.manifest">
+<head>
+<title>AJZA ALHASB JAILBREAK 0558028009</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    background-image: url('image.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: 100% 100%;
+    overflow: hidden;
+    background-color: #252526;
+    color: #1f1f1f;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    text-align: center;
+}
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.12);
+    pointer-events: none;
+    z-index: 0;
+}
+body > * {
+    position: relative;
+    z-index: 1;
+}
+#msgs {
+    /* Keeps the top-center area clear for the jailbreak/loading process. */
+    width: min(760px, 80vw);
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+}
+</style>
+
+</head>
+<body>
+<script>
+history.replaceState(null,null,'index.html');var histlength=history.length;history.go(-histlength);
+function DLProgress(e){Percent=(Math.round(e.loaded / e.total * 100));window.msgs.innerHTML="Installing offline cache...: " + Percent + "%";}
+function DisplayCacheProgress(){window.msgs.innerHTML="The cache has been successfully installed.. ✔";setTimeout(function(){window.msgs.innerHTML="Now close the browser and open it....";},1500);}
+window.applicationCache.addEventListener("progress",DLProgress,false);
+window.applicationCache.oncached=function(e){DisplayCacheProgress();};
+window.applicationCache.onupdateready=function(e){DisplayCacheProgress();};
+window.applicationCache.onerror=function(e){window.msgs.innerHTML="rror Installing Cache! - Clear and Re-Open Your Browser ...";};
+</script>
+<h1 style="margin-top: 30px;">AJZA ALHASB JAILBREAK</h1>
+<br>
+<h1 id="msgs" class="rainbow-text" style="font-size: 30px; margin-top: 77px; margin-bottom: 455px;">
+Installing cache....
+</body>
+</html>
